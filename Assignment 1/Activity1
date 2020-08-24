@@ -1,1 +1,27 @@
+// Making a grilled cheese sandwich 
 
+function MakeGrilledCheeseSandwich{ 
+    Take out bread
+    Take out cheese
+    Take out butter
+    Take out plate
+    Take out pan
+    Put pan on Stove
+    Turn on stove
+    Take knife out
+    Take spatula out
+    Spread butter on both sides of each piece of bread with knife
+    Put Cheese in between two pieces of buttered bread
+    Place on pan
+    Toast first side until brown
+    Flip with spatula 
+    Toast Second side until brown and cheese is melted
+    Use spatula to remove sandwich from pan and onto a plate
+    Put away bread
+    put away butter 
+    put away cheese 
+    Place pan and spatula in washer
+    Cut sandwich in half with knife
+    Eat
+}
+  
