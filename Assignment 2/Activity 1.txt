@@ -1,0 +1,3 @@
+Function Main
+    Output "Hello World!"
+End
