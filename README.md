@@ -6,3 +6,5 @@ I am taking this course because I enjoy programming a lot. As of now it is the o
 
 ## Assignment 2
 
+I chose JS for this course because of how popular and powerful it is for web development. I plan to use VS Code for most of my development because of how good it is for web development. I used the code editor Atom for a little bit, but I prefer VS-Code overall.
+
