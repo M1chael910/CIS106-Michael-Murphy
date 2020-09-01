@@ -1,0 +1,4 @@
+Function Main
+    ... Prints name to the console
+    Output "Michael"
+End
