@@ -11,5 +11,6 @@ function main() {
     weeklyPay = hourlyRate * Hours;
     monthlyPay = weeklyPay * 4;
     yearlyPay = weeklyPay * 52;
-    window.alert(weeklyPay.ToString() + monthlyPay + yearlyPay);
+    window.alert(`Weekly Pay: ${weeklyPay} Monthly Pay: ${monthlyPay} Yearly Pay: ${yearlyPay}`)
+
 }
