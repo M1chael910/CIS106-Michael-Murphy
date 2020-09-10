@@ -10,6 +10,6 @@ function main() {
     Hours = window.prompt('Enter a value for Hours');
     weeklyPay = hourlyRate * Hours;
     monthlyPay = weeklyPay * 4;
-    yearlyPay = monthlyPay * 12;
+    yearlyPay = weeklyPay * 52;
     window.alert(weeklyPay.ToString() + monthlyPay + yearlyPay);
 }
