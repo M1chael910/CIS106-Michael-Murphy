@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michael Murphy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-09-09 09:34:18 PM"/>
+        <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTA5LTA5OzA4OjEwOjQ5IFBNOzMzODU="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTA5LTA5OzA5OjM0OjE4IFBNOzI7MzQ5Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program prompts the user for their hours and rate per hour and then calculates the monthly, weekly, and yearly pay of the user"/>
+            <declare name="weeklyPay" type="Real" array="False" size=""/>
+            <declare name="monthlyPay" type="Real" array="False" size=""/>
+            <declare name="yearlyPay" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter hourly rate&quot;" newline="True"/>
+            <input variable="hourlyRate"/>
+            <output expression="&quot;Enter Hours&quot;" newline="True"/>
+            <input variable="Hours"/>
+            <assign variable="weeklyPay" expression="(hourlyRate * Hours)"/>
+            <assign variable="monthlyPay" expression="weeklyPay * 4"/>
+            <assign variable="yearlyPay" expression="monthlyPay * 12"/>
+            <output expression="weeklyPay &amp; monthlyPay &amp; yearlyPay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
