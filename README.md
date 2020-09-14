@@ -10,5 +10,9 @@ I chose JS for this course because of how popular and powerful it is for web dev
 
 ## Assignment 3
 
-This assignment was a really good review of the basics for me, especially when tackling a new programming language. Some of the things I learned about were Data Types, the order of operations, Data type conversions, and the input-process-output-model. I plan to use this to further my knowledge of javascript to work on becoming a web developer. 
+This assignment was a really good review of the basics for me, especially when tackling a new programming language. Some of the things I learned about were Data Types, the order of operations, Data type conversions, and the input-process-output-model. I plan to use this to further my knowledge of JavaScript to work on becoming a web developer. 
+
+## Assignment 4
+
+In this assignment I reviewed inputing and outputing data in JavaScript, along with doing simple calculations and printing them out. I plan to use this to improve my Javascript skills and work towards becoming a web developer in the future.
  
