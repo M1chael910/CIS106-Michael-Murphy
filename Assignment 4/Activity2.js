@@ -1,3 +1,6 @@
+// This program prompts the user for a distance in miles, and calculates and prints that distance in Yards, Feet, and inches
+
+
 var distanceInMiles = input("Enter distance in miles:");
 var distanceInYards = distanceInMiles * 1760;
 var distanceInFeet = distanceInMiles * 5280;
