@@ -1,11 +1,12 @@
-// This program prompts the user for a distance in miles, and calculates and prints that distance in Yards, Feet, and inches
+// This program prompts the user for their age in years and calculates and prints their age in months, days, hours and seconds
 
 
-var distanceInMiles = input("Enter distance in miles:");
-var distanceInYards = distanceInMiles * 1760;
-var distanceInFeet = distanceInMiles * 5280;
-var distanceInInches = distanceInMiles * 63360;
-output(distanceInMiles + " miles is " + distanceInYards + " yards," + distanceInFeet + " feet, and " + distanceInInches + " inches");
+var ageInYears = input("Enter Age in years");
+var ageInMonths = ageInYears * 12;
+var ageInDays = ageInYears * 365;
+var ageInHours = ageInYears * 8760;
+var ageInSeconds = ageInYears * 31557600;
+output(ageInYears + " years is " + ageInMonths + " months," + ageInDays + " days, " + ageInHours + " hours, and " + ageInSeconds + " seconds");
 
 function input(text) {
   if (typeof window === 'object') {
