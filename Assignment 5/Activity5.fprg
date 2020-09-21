@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michael Murphy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-09-21 05:07:51 PM"/>
+        <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTA5LTIxOzAzOjM1OjU1IFBNOzMzNzg="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTA5LTIxOzA1OjA3OjUxIFBNOzI7MzQ4NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Asks user for the length and width of their room, calculates the area of the room in Square Yards, and prints it."/>
+            <declare name="Length" type="Integer" array="False" size=""/>
+            <declare name="Width" type="Integer" array="False" size=""/>
+            <assign variable="Length" expression="InputLength()"/>
+            <assign variable="Width" expression="InputWidth()"/>
+            <declare name="AreaOfRoom" type="Real" array="False" size=""/>
+            <assign variable="AreaOfRoom" expression="CalculateAreaOfRoom(Length,Width)"/>
+            <call expression="OutputAreaOfRoom(AreaOfRoom)"/>
+        </body>
+    </function>
+    <function name="CalculateAreaOfRoom" type="Real" variable="AreaOfRoom">
+        <parameters>
+            <parameter name="width" type="Integer" array="False"/>
+            <parameter name="length" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="AreaOfRoom" type="Integer" array="False" size=""/>
+            <assign variable="AreaOfRoom" expression="(width * length) / 9"/>
+        </body>
+    </function>
+    <function name="InputLength" type="Integer" variable="Length">
+        <parameters/>
+        <body>
+            <declare name="Length" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter Lenth of room in feet&quot;" newline="True"/>
+            <input variable="Length"/>
+        </body>
+    </function>
+    <function name="InputWidth" type="Integer" variable="Width">
+        <parameters/>
+        <body>
+            <declare name="Width" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter width of room in feet&quot;" newline="True"/>
+            <input variable="Width"/>
+        </body>
+    </function>
+    <function name="OutputAreaOfRoom" type="None" variable="">
+        <parameters>
+            <parameter name="AreaOfRoom" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;The area of the room is &quot; &amp; AreaOfRoom" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
