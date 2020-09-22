@@ -16,3 +16,6 @@ This assignment was a really good review of the basics for me, especially when t
 
 In this assignment I reviewed inputing and outputing data in JavaScript, along with doing simple calculations and printing them out. I plan to use this to improve my Javascript skills and work towards becoming a web developer in the future.
  
+## Assignment 5
+
+In this assignment I learned how to use functions in javascript, and how they differ from other languages I have used. I reviewed parameters, arguments, and return statements as well. Also, I learned about breaking down code into seperate functions, and calling them from within the function main. I plan to use these skills to write cleaner code and keep the core features of my code seperated into different functions. I also plan to use these skills to continue working on becoming a web developer. 
