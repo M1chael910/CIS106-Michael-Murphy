@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michael Murphy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-09-27 07:46:40 PM"/>
+        <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTA5LTIyOzAxOjI2OjIyIFBNOzMzNzE="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTA5LTI3OzA3OjQ2OjQwIFBNOzI7MzQ5Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Length" type="Real" array="False" size=""/>
+            <assign variable="Length" expression="InputLengthOfRoom()"/>
+            <declare name="Width" type="Real" array="False" size=""/>
+            <assign variable="Width" expression="InputWidthOfRoom()"/>
+            <declare name="Height" type="Real" array="False" size=""/>
+            <assign variable="Height" expression="InputHeightOfRoom()"/>
+            <declare name="priceOfGallonOfPaint" type="Real" array="False" size=""/>
+            <assign variable="priceOfGallonOfPaint" expression="InputPriceOfPaint()"/>
+            <declare name="numberOfFeetGallonOfPaintCovers" type="Real" array="False" size=""/>
+            <assign variable="numberOfFeetGallonOfPaintCovers" expression="InputSqaureFeetThatGallonCovers()"/>
+            <declare name="areaOfFourWalls" type="Real" array="False" size=""/>
+            <assign variable="areaOfFourWalls" expression="CalculateAreaOfFourWalls(Length, Width, Height)"/>
+            <declare name="numberOfGallons" type="Integer" array="False" size=""/>
+            <assign variable="numberOfGallons" expression="CalculateNumberOfGallons(areaOfFourWalls, numberOfFeetGallonOfPaintCovers)"/>
+            <declare name="totalCostOfPaint" type="Real" array="False" size=""/>
+            <assign variable="totalCostOfPaint" expression="calculateTotalCost(numberOfGallons, priceOfGallonOfPaint)"/>
+            <call expression="outputTotalCost(totalCostOfPaint)"/>
+        </body>
+    </function>
+    <function name="CalculateAreaOfFourWalls" type="Real" variable="Area">
+        <parameters>
+            <parameter name="length" type="Real" array="False"/>
+            <parameter name="Width" type="Real" array="False"/>
+            <parameter name="Height" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Area" type="Real" array="False" size=""/>
+            <assign variable="Area" expression="2 * length * height + 2 * Width * Height"/>
+        </body>
+    </function>
+    <function name="CalculateNumberOfGallons" type="Integer" variable="numberOfGallons">
+        <parameters>
+            <parameter name="totalArea" type="Real" array="False"/>
+            <parameter name="squareFeetPerGallon" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="numberOfGallons" type="Real" array="False" size=""/>
+            <assign variable="numberOfGallons" expression="totalArea / squareFeetPerGallon"/>
+        </body>
+    </function>
+    <function name="calculateTotalCost" type="Real" variable="totalCost">
+        <parameters>
+            <parameter name="Gallons" type="Integer" array="False"/>
+            <parameter name="pricePerGallon" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="totalCost" type="Real" array="False" size=""/>
+            <assign variable="totalCost" expression="Gallons * pricePerGallon"/>
+        </body>
+    </function>
+    <function name="InputHeightOfRoom" type="Real" variable="Height">
+        <parameters/>
+        <body>
+            <declare name="Height" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter height of room&quot;" newline="True"/>
+            <input variable="Height"/>
+        </body>
+    </function>
+    <function name="InputLengthOfRoom" type="Real" variable="Length">
+        <parameters/>
+        <body>
+            <declare name="Length" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter length of room&quot;" newline="True"/>
+            <input variable="Length"/>
+        </body>
+    </function>
+    <function name="InputPriceOfPaint" type="Real" variable="PriceOfPaint">
+        <parameters/>
+        <body>
+            <declare name="PriceOfPaint" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter price of paint&quot;" newline="True"/>
+            <input variable="PriceOfPaint"/>
+        </body>
+    </function>
+    <function name="InputSqaureFeetThatGallonCovers" type="Real" variable="SquareFeetPerGallon">
+        <parameters/>
+        <body>
+            <declare name="SquareFeetPerGallon" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the amount of square feet a gallon of paint will cover.&quot;" newline="True"/>
+            <input variable="SquareFeetPerGallon"/>
+        </body>
+    </function>
+    <function name="InputWidthOfRoom" type="Real" variable="Width">
+        <parameters/>
+        <body>
+            <declare name="Width" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter width of room&quot;" newline="True"/>
+            <input variable="Width"/>
+        </body>
+    </function>
+    <function name="outputTotalCost" type="None" variable="">
+        <parameters>
+            <parameter name="totalCost" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Your total cost for paint is &quot;&amp; totalCost &amp; &quot; Dollars&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
