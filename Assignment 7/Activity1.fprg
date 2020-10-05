@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michael Murphy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-05 05:31:54 PM"/>
+        <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTA1OzAyOjMwOjQxIFBNOzMzNjE="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTA1OzA1OjMxOjU0IFBNOzc7MzQ4Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hoursPerWeek" type="Integer" array="False" size=""/>
+            <assign variable="hoursPerWeek" expression="getHours()"/>
+            <declare name="ratePerHour" type="Real" array="False" size=""/>
+            <assign variable="ratePerHour" expression="getRatePerHour()"/>
+            <if expression="hoursPerWeek &gt;=40">
+                <then>
+                    <declare name="regPayWithOvertime" type="Real" array="False" size=""/>
+                    <assign variable="regPayWithOvertime" expression="calculateRegPayWithOvertime(hoursPerWeek, ratePerHour)"/>
+                    <output expression="&quot;Your gross pay with overtime is &quot; &amp; regPayWithOvertime &amp; &quot; dollars including overtime.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <declare name="regPay" type="Real" array="False" size=""/>
+                    <assign variable="regPay" expression="calculateRegPay(hoursPerWeek, ratePerHour)"/>
+                    <output expression="output(&quot;Your gross pay is &quot; &amp; regPay &amp; &quot; dollars with no overtime.&quot;)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calculateRegPay" type="Integer" variable="regPay">
+        <parameters>
+            <parameter name="hours" type="Integer" array="False"/>
+            <parameter name="rateOfPay" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="regPay" type="Integer" array="False" size=""/>
+            <assign variable="regPay" expression="hours * rateOfPay"/>
+        </body>
+    </function>
+    <function name="calculateRegPayWithOvertime" type="Integer" variable="grossPay">
+        <parameters>
+            <parameter name="hours" type="Integer" array="False"/>
+            <parameter name="rateOfPay" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="regPay" type="Real" array="False" size=""/>
+            <assign variable="regPay" expression="40 * rateOfPay"/>
+            <declare name="overtimePay" type="Real" array="False" size=""/>
+            <assign variable="overtimePay" expression="((hours -40)*(rateOfPay * 1.5))"/>
+            <declare name="grossPay" type="Integer" array="False" size=""/>
+            <assign variable="grossPay" expression="regPay + overtimePay"/>
+        </body>
+    </function>
+    <function name="getHours" type="Integer" variable="hours">
+        <parameters/>
+        <body>
+            <declare name="hours" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter amount of hours worked in a week&quot;" newline="True"/>
+            <input variable="hours"/>
+        </body>
+    </function>
+    <function name="getRatePerHour" type="Real" variable="rate">
+        <parameters/>
+        <body>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter rate of pay per hour&quot;" newline="True"/>
+            <input variable="rate"/>
+        </body>
+    </function>
+</flowgorithm>
