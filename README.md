@@ -23,3 +23,7 @@ In this assignment I learned how to use functions in javascript, and how they di
 ## Assignment 6
 
 This assignment reviewed the same topics as the last assignment, and applied it to different exercises. I worked with functions, using parameters to input arguments into the function, and return a value. I used functions to split up the functionallity of my program to keep my code clean and make it easier to debug. I intend to use these skills to improve the quality and readability of my code, and to make it easier to debug, which goes towards my goal of being a web developer. 
+
+## Assignment 7
+
+In this assignment I learned about conditions and the different control structures and how they can be applied to our code. I have a decent understanding of these but it was helpful reviewing them for my specific language this semester. Conditions and control structures are a core part of programming and, in my experience, are used very frequently when coding, which makes them an extremely useful skill to know when becoming a developer. 
