@@ -4,12 +4,107 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="Michael Murphy"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2020-10-05 02:32:29 PM"/>
+        <attribute name="saved" value="2020-10-08 09:44:12 AM"/>
         <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTA1OzAyOjMyOjE4IFBNOzMzNjc="/>
-        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTA1OzAyOjMyOjI5IFBNOzE7MzQ3Nw=="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTA4OzA5OjQ0OjEyIEFNOzM7MzQ2OQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
-        <body/>
+        <body>
+            <declare name="distanceInMiles" type="Real" array="False" size=""/>
+            <assign variable="distanceInMiles" expression="getDistance()"/>
+            <declare name="choice" type="String" array="False" size=""/>
+            <assign variable="choice" expression="getChoice()"/>
+            <if expression="choice == &quot;U&quot; || choice == &quot;u&quot;">
+                <then>
+                    <declare name="yards" type="Real" array="False" size=""/>
+                    <assign variable="yards" expression="calculateYards(distanceInMiles)"/>
+                    <declare name="feet" type="Real" array="False" size=""/>
+                    <assign variable="feet" expression="calculateFeet(distanceInMiles)"/>
+                    <declare name="inches" type="Real" array="False" size=""/>
+                    <assign variable="inches" expression="calculateInches(distanceInMiles)"/>
+                    <output expression="&quot;Your distance in miles is &quot; &amp; yards &amp; &quot; in yards, &quot; &amp; feet &amp; &quot; in feet, &quot; &amp; inches &amp; &quot; in inches&quot;" newline="True"/>
+                </then>
+                <else>
+                    <declare name="kilometers" type="Real" array="False" size=""/>
+                    <assign variable="kilometers" expression="calculateKilometers(distanceInMiles)"/>
+                    <declare name="meters" type="Real" array="False" size=""/>
+                    <assign variable="meters" expression="calculateMeters(distanceInMiles)"/>
+                    <declare name="centimeters" type="Real" array="False" size=""/>
+                    <assign variable="centimeters" expression="calculateCentimeters(distanceInMiles)"/>
+                    <output expression="&quot;Your distance in miles is &quot; &amp; kilometers &amp; &quot; in kilometers, &quot; &amp; meters + &quot; in meters, &quot;&amp; centimeters &amp; &quot; in centimeters&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calculateCentimeters" type="Real" variable="centimeters">
+        <parameters>
+            <parameter name="distance" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="centimeters" type="Real" array="False" size=""/>
+            <assign variable="centimeters" expression="distance * 160934"/>
+        </body>
+    </function>
+    <function name="calculateFeet" type="Real" variable="feet">
+        <parameters>
+            <parameter name="distance" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="feet" type="Real" array="False" size=""/>
+            <assign variable="feet" expression="distance * 5280"/>
+        </body>
+    </function>
+    <function name="calculateInches" type="Real" variable="inches">
+        <parameters>
+            <parameter name="distance" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="inches" type="Real" array="False" size=""/>
+            <assign variable="inches" expression="distance * 63360"/>
+        </body>
+    </function>
+    <function name="calculateKilometers" type="Real" variable="kilometers">
+        <parameters>
+            <parameter name="distance" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="kilometers" type="Real" array="False" size=""/>
+            <assign variable="kilometers" expression="distance * 1.60934"/>
+        </body>
+    </function>
+    <function name="calculateMeters" type="Real" variable="meters">
+        <parameters>
+            <parameter name="distance" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="meters" type="Real" array="False" size=""/>
+            <assign variable="meters" expression="distance * 1609.34"/>
+        </body>
+    </function>
+    <function name="calculateYards" type="Real" variable="yards">
+        <parameters>
+            <parameter name="distance" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="yards" type="Real" array="False" size=""/>
+            <assign variable="yards" expression="distance * 1760"/>
+        </body>
+    </function>
+    <function name="getChoice" type="String" variable="choice">
+        <parameters/>
+        <body>
+            <declare name="choice" type="String" array="False" size=""/>
+            <output expression="&quot;Enter U for US units or M for metric units&quot;" newline="True"/>
+            <input variable="choice"/>
+        </body>
+    </function>
+    <function name="getDistance" type="Real" variable="distance">
+        <parameters/>
+        <body>
+            <declare name="distance" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter distance in miles&quot;" newline="True"/>
+            <input variable="distance"/>
+        </body>
     </function>
 </flowgorithm>
