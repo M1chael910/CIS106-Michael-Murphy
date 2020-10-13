@@ -27,3 +27,9 @@ This assignment reviewed the same topics as the last assignment, and applied it 
 ## Assignment 7
 
 In this assignment I learned about conditions and the different control structures and how they can be applied to our code. I have a decent understanding of these but it was helpful reviewing them for my specific language this semester. Conditions and control structures are a core part of programming and, in my experience, are used very frequently when coding, which makes them an extremely useful skill to know when becoming a developer. 
+
+## Assignment 8 
+
+This week, we learned about the various kinds of loops, branching statements,how to use the increment and decrement operators to modify the flag to avoid a infinite loop. These skills can be very useful in business to process large amounts of data and repeat actions on that data, and to be able to repeat a line of code multiple times without writing it that many times is very powerful and timesaving.
+
+
