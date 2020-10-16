@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michael Murphy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-16 02:23:01 PM"/>
+        <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTE2OzAyOjE0OjI2IFBNOzMzNjg="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTE2OzAyOjIzOjAxIFBNOzM7MzQ3MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="value" type="Integer" array="False" size=""/>
+            <assign variable="value" expression="getValue()"/>
+            <declare name="numberOfExpressions" type="Integer" array="False" size=""/>
+            <assign variable="numberOfExpressions" expression="getNumberOfExpressions()"/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <assign variable="counter" expression="numberOfExpressions"/>
+            <declare name="multiplier" type="Integer" array="False" size=""/>
+            <assign variable="multiplier" expression="1"/>
+            <while expression="counter&gt;0">
+                <output expression="value &amp;&quot; * &quot; &amp; (multiplier) &amp; &quot; = &quot;&amp; (value * multiplier)" newline="True"/>
+                <assign variable="counter" expression="counter + 1"/>
+                <assign variable="multiplier" expression="multiplier + 1"/>
+            </while>
+        </body>
+    </function>
+    <function name="getNumberOfExpressions" type="Integer" variable="numberOfExpressions">
+        <parameters/>
+        <body>
+            <declare name="numberOfExpressions" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the amount of expressions to be printed&quot;" newline="True"/>
+            <input variable="numberOfExpressions"/>
+        </body>
+    </function>
+    <function name="getValue" type="Integer" variable="value">
+        <parameters/>
+        <body>
+            <declare name="value" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a value&quot;" newline="True"/>
+            <input variable="value"/>
+        </body>
+    </function>
+</flowgorithm>
