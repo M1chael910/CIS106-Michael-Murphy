@@ -4,9 +4,9 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="Michael Murphy"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2020-10-19 10:25:13 PM"/>
+        <attribute name="saved" value="2020-10-19 10:54:08 PM"/>
         <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTA1OzAyOjMwOjQxIFBNOzMzNjE="/>
-        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTE5OzEwOjI1OjEzIFBNOzg7MzQ4Mw=="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTE5OzEwOjU0OjA4IFBNOzk7MzQ5MA=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -59,10 +59,12 @@
             <declare name="hours" type="Integer" array="False" size=""/>
             <output expression="&quot;Enter amount of hours worked in a week&quot;" newline="True"/>
             <input variable="hours"/>
-            <if expression="hours &lt;= 0">
+            <if expression="hours&lt;=0">
                 <then>
-                    <output expression="&quot;Enter a valid number of hours worked&quot;" newline="True"/>
-                    <input variable="hours"/>
+                    <do expression="hours&lt;=0">
+                        <output expression="&quot;Enter a valid rate per hour&quot;" newline="True"/>
+                        <input variable="hours"/>
+                    </do>
                 </then>
                 <else/>
             </if>
@@ -74,10 +76,12 @@
             <declare name="rate" type="Real" array="False" size=""/>
             <output expression="&quot;Enter rate of pay per hour&quot;" newline="True"/>
             <input variable="rate"/>
-            <if expression="rate &lt;= 0">
+            <if expression="rate&lt;=0">
                 <then>
-                    <output expression="&quot;Enter a valid rate per hour&quot;" newline="True"/>
-                    <input variable="rate"/>
+                    <do expression="rate&lt;=0">
+                        <output expression="&quot;Enter a valid rate per hour&quot;" newline="True"/>
+                        <input variable="rate"/>
+                    </do>
                 </then>
                 <else/>
             </if>
