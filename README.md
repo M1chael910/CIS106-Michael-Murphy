@@ -32,4 +32,8 @@ In this assignment I learned about conditions and the different control structur
 
 This week, we learned about the various kinds of loops, branching statements,how to use the increment and decrement operators to modify the flag to avoid a infinite loop. These skills can be very useful in business to process large amounts of data and repeat actions on that data, and to be able to repeat a line of code multiple times without writing it that many times is very powerful and timesaving.
 
+##
+
+This week we reviewed do loops and how they are used. These loops are very useful for validating input data and asking the user to enter a different value when their value is insufficent. They are also useful for incrementing through large amounts of data and repeating sections of code on each value, which could be very useful in a buissness codebase. I plan to use this skill in working to become a web developer. 
+
 
