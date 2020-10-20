@@ -7,31 +7,27 @@ main();
 function main() {
     var hours = getHours();
     var rateOfPay = getRatePerHour();
-    if (hours >= 40) {
-        var grossPayWithOvertime = calculateGrossPayWithOvertime(hours, rateOfPay);
-        output("Your gross pay with overtime is " + grossPayWithOvertime + " dollars including overtime.")
-    } else {
-        var regPay = calculateRegPay(hours, rateOfPay);
-        output("Your gross pay is " + regPay + " dollars with no overtime.")
-    }
+    outputGrossPay(hours,rateOfPay);
 }
-
 function getHours() {
     var hours = input("Enter hours worked this week");
-    if (hours <=0) { 
-        hours = input("Enter a valid number of hours worked");
-    }  
-        return hours;
+    if (hours<=0) { 
+        do { 
+            hours = input("Enter a valid number of hours worked")
+        } while (hours<=0)
+    } 
+    return hours;
 }
 
 function getRatePerHour() {
     var rateOfPay = input("Enter rate per hour");
-    if (rateOfPay<= 0) { 
-        rateOfPay = input("Enter a valid rate per hour");
+    if (rateOfPay<=0) { 
+        do { 
+            rateOfPay = input("Enter a valid rate per hour")
+        } while (rateOfPay<=0)
     }
-    return rateOfPay;        
+    return rateOfPay;     
 }
-
 
 function calculateRegPay(hours, rateOfPay) {
     var grossPay = hours * rateOfPay;
@@ -43,6 +39,16 @@ function calculateGrossPayWithOvertime(hours, rateOfPay) {
     var overtimePay = ((hours - 40) * (rateOfPay * 1.5));
     var grossOvertimePay = regPay + overtimePay;
     return grossOvertimePay;
+}
+
+function outputGrossPay(hours, rateOfPay) { 
+    if (hours >= 40) {
+        var grossPayWithOvertime = calculateGrossPayWithOvertime(hours, rateOfPay);
+        output("Your gross pay with overtime is " + grossPayWithOvertime + " dollars including overtime.")
+    } else {
+        var regPay = calculateRegPay(hours, rateOfPay);
+        output("Your gross pay is " + regPay + " dollars with no overtime.")
+    }
 }
 
 function input(text) {
