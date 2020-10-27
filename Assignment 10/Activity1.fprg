@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michael Murphy"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-10-26 09:36:35 PM"/>
+        <attribute name="created" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTI2OzA4OjI5OjI4IFBNOzMzODM="/>
+        <attribute name="edited" value="TWljaGFlbCBNdXJwaHk7TUlDSEFFTFNQQzsyMDIwLTEwLTI2OzA5OjM2OjM1IFBNOzI7MzQ4OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="value" type="Integer" array="False" size=""/>
+            <assign variable="value" expression="getValue()"/>
+            <declare name="numberOfExpressions" type="Integer" array="False" size=""/>
+            <assign variable="numberOfExpressions" expression="getNumberOfExpressions()"/>
+            <call expression="outputExpressions(numberOfExpressions, value)"/>
+        </body>
+    </function>
+    <function name="getNumberOfExpressions" type="Integer" variable="numberOfExpressions">
+        <parameters/>
+        <body>
+            <declare name="numberOfExpressions" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter how many expressions to be displayed&quot;" newline="True"/>
+            <input variable="numberOfExpressions"/>
+        </body>
+    </function>
+    <function name="getValue" type="Integer" variable="value">
+        <parameters/>
+        <body>
+            <declare name="value" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a value&quot;" newline="True"/>
+            <input variable="value"/>
+        </body>
+    </function>
+    <function name="outputExpressions" type="None" variable="">
+        <parameters>
+            <parameter name="numberOfExpressions" type="Integer" array="False"/>
+            <parameter name="value" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="multiplier" type="Integer" array="False" size=""/>
+            <assign variable="multiplier" expression="1"/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <assign variable="counter" expression="numberOfExpressions"/>
+            <for variable="counter" start="numberOfExpressions" end="0" direction="inc" step="1">
+                <output expression="value &amp;&quot; * &quot; &amp; (multiplier) &amp; &quot; = &quot;&amp; (value * multiplier)" newline="True"/>
+                <assign variable="multiplier" expression="multiplier + 1"/>
+                <assign variable="counter" expression="counter - 1"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
