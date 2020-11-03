@@ -40,3 +40,7 @@ This week we reviewed do loops and how they are used. These loops are very usefu
 
 This week we focused on for loops. I found it helpful that all arguments in the header of the loop are optional in JavaScript, and made it way easier to understand. These loops are very useful for repeating code until a certain condition is met. They can be used to iterate through data from an array using the first argument in the header to define a variable to serve as a counter. These loops could be useful in a codebase because of their flexability with working with data. I plan to use this skil to work towards becoming a web developer.
 
+## Assignment 11
+
+This week we focused on arrays. Arrays are very powerful and useful for storing and processing data. I learned about the difference between fixed and dynamic arrays, fixed arrays having hardcoded fixed length, and dynamic arrays allow values to be added and removed. 
+
