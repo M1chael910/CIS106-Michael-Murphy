@@ -42,5 +42,5 @@ This week we focused on for loops. I found it helpful that all arguments in the 
 
 ## Assignment 11
 
-This week we focused on arrays. Arrays are very powerful and useful for storing and processing data. I learned about the difference between fixed and dynamic arrays, fixed arrays having hardcoded fixed length, and dynamic arrays allow values to be added and removed. 
+This week we focused on arrays. Arrays are very powerful and useful for storing and processing data. I learned about the difference between fixed and dynamic arrays, fixed arrays having hardcoded fixed length, and dynamic arrays allow values to be added and removed. We also learned about index notation, searching and sorting through arrays, and how parallel arrays work. These skils are useful because arrays are commennly used in algorithms and business codebases. I plan to use these skills to further my goal of becoming a web developer. 
 
