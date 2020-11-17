@@ -48,4 +48,10 @@ This week we focused on arrays. Arrays are very powerful and useful for storing 
 
 This week we focused on Dynamic arrays. Dynamic arrays are useful because they do not have a fixed capacity, and elements can be added or removed at runtime. This is useful in a business codebase because it allows arrays to be more flexible, and used in more situations. I plan on using these skills to improve my understanding of JavaScript and how to apply it to solving programming problems.   
 
+## Assignment 13 
+
+This week I took a deep dive into strings. I learned about string functions that are built in to various programming languages, and how to use them to modify strings. I also learned about formatting strings, and how JavaScript does not have a dedicated format function like other languages. JavaScript has built in syntax to add values to and format strings. 
+
+
+
 
