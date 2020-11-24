@@ -52,7 +52,7 @@ This week we focused on Dynamic arrays. Dynamic arrays are useful because they d
 
 This week I took a deep dive into strings. I learned about string functions that are built in to various programming languages, and how to use them to modify strings. I also learned about formatting strings, and how JavaScript does not have a dedicated format function like other languages. JavaScript has built in syntax to add values to and format strings. This feature could be very useful in modifying or error checking input strings in applications.
 
-##
+## Assignment 14
 
 This week we learned about files. I learned about how we can create, edit, and delete files from code, and pull data from outside files. This feature could be incredibly useful in pulling data from other sources, or keeping large strings in text files instead of in our code.  
 
