@@ -1,4 +1,5 @@
-
+// This program pulls numbers out the file "scores.txt" and 
+// calculates and outputs the minumum, maximum, and average.
 
 main();
 function main() { 
@@ -19,16 +20,18 @@ function getFile(filename) {
     var file = require('readline').createInterface( {
       input: require('fs').createReadStream(filename)
     });
-    return file
+    return file;
 }
 function getScoreArray(file) { 
-    var scoreArray = []
+    var scores = [];
     file.on('line', function (line) {
-        var score = parseInt(line.slice(line.indexOf(",")+1,line.length));
-        scoreArray.push(score);
-        output(score);
+        output(line);
+        var scoreString = line.slice(line.indexOf(",")+1,line.length);
+        var scoreInt = parseInt(scoreString);
+        output(scoreInt);
+        scores.push(scoreInt);
     });
-    return scoreArray;
+    return scores;
 }
 
 function fileExists(filename) {
