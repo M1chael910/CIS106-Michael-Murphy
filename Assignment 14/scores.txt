@@ -1,3 +1,4 @@
+Name,Score
 Joe Besser,70
 Curly Joe DeRita,0
 Larry Fine,80
