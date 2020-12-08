@@ -10,15 +10,11 @@ function main() {
 function loadFileData() {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     let fileUrl = "https://www.w3schools.com/xml/plant_catalog.xml";
-    var req = new XMLHttpRequest();
+    var request = new XMLHttpRequest();
     
-    req.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        return this.responseText;
-      }
-    };
-    req.open("GET", fileUrl, true);
-    req.send();
+    request.open("GET", fileUrl, false);
+    request.send(null);
+    return request.responseText;
 }
 
 function removeTags(line)
