@@ -2,7 +2,9 @@
 
 main();
 function main() { 
-    loadFileData();
+    var fileDataString = loadFileData();
+    var commonNamesArray = createCommonNamesArray(fileDataString);
+    output(commonNamesArray);
 }
 
 function loadFileData() {
@@ -12,28 +14,34 @@ function loadFileData() {
     
     req.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        parseData(this.responseText);
+        return this.responseText;
       }
     };
     req.open("GET", fileUrl, true);
     req.send();
 }
 
-function createArrays(xmlText) {;
+function removeTags(line)
+{
+   if ((line===null) || (line===''))
+       return false;
+  else
+  return line.replace(/<[^>]*>/g, '');
+}
+
+function createCommonNamesArray(xmlText) {;
+    var commonNames = [];
     var lines = xmlText.split("\n");
     // 288
     for (var i = 2; i < lines.length - 2; i++) { 
         var line = lines[i];
         if (line.includes("<COMMON>")) { 
-            var 
+            var commonName = removeTags(line);
+            commonNames.push(commonName);
         }
-        output(lines[i]);
     }
-    output(lines.length);
+    return commonNames;
 }
-
-
-
 
 function output(text) {
     if (typeof document === 'object') {
