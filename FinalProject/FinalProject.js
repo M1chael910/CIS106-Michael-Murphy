@@ -4,7 +4,7 @@ main();
 function main() { 
     var fileDataString = loadFileData();
     var commonNamesArray = createCommonNamesArray(fileDataString);
-    var botanicalNameArray = createBotanicalNamesArray();
+    // var botanicalNameArray = createBotanicalNamesArray();
     output(commonNamesArray);
 }
 
@@ -12,7 +12,6 @@ function loadFileData() {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     let fileUrl = "https://www.w3schools.com/xml/plant_catalog.xml";
     var request = new XMLHttpRequest();
-    
     request.open("GET", fileUrl, false);
     request.send(null);
     return request.responseText;
