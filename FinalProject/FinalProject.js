@@ -4,6 +4,7 @@ main();
 function main() { 
     var fileDataString = loadFileData();
     var commonNamesArray = createCommonNamesArray(fileDataString);
+    var botanicalNameArray = createBotanicalNamesArray();
     output(commonNamesArray);
 }
 
@@ -38,6 +39,19 @@ function createCommonNamesArray(xmlText) {;
         if (line.includes("<COMMON>")) { 
             var commonName = removeTags(line);
             commonNames.push(commonName);
+        }
+    }
+    return commonNames;
+}
+function createBotanicalNamesArray(xmlText) {;
+    var botanicalNames = [];
+    var lines = xmlText.split("\n");
+    // 288
+    for (var i = 2; i < lines.length - 2; i++) { 
+        var line = lines[i];
+        if (line.includes("<BOTANICAL>")) { 
+            var botanicalName = removeTags(line);
+            botanicalNames.push(botanicalName);
         }
     }
     return commonNames;
