@@ -1,18 +1,37 @@
+const { userInfo } = require("os");
 
 
 main();
 function main() { 
-    var fileDataString = loadFileData();
+    let fileUrl = "https://www.w3schools.com/xml/plant_catalog.xml";
+    var fileDataString = loadFileDataFromUrl(fileUrl);
     var commonNamesArray = createCommonNamesArray(fileDataString);
-    // var botanicalNameArray = createBotanicalNamesArray();
-    output(commonNamesArray);
+    var botanicalNameArray = createBotanicalNamesArray(fileDataString);
+    var zoneArray = createZoneArray(fileDataString);
+    var lightArray = createlightArray(fileDataString);
+    var priceArray = createPriceArray(fileDataString);
+    outputPlantData(commonNamesArray, botanicalNameArray, zoneArray, lightArray, priceArray);
 }
 
-function loadFileData() {
+function outputPlantData(commonNames, botanicalNames, zones, lightArray, prices) { 
+    for (i = 0; i < commonNames.length; i++) { 
+        var commonName = commonNames[i].trim();
+        var botanicalName = botanicalNames[i].trim();
+        var zone = zones[i].trim();
+        var light = lightArray[i].trim();
+        var price = prices[i].trim();
+        var outputString = `${commonName}(${botanicalName}) - ${zone} - ${light} - ${price}`;
+        console.log(outputString);1
+    }
+}
+
+function loadFileDataFromUrl(url) {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-    let fileUrl = "https://www.w3schools.com/xml/plant_catalog.xml";
     var request = new XMLHttpRequest();
-    request.open("GET", fileUrl, false);
+    request.onerror = function() { 
+        console.log("Failed to fetch file");
+    }
+    request.open("GET", url, false);
     request.send(null);
     return request.responseText;
 }
@@ -25,10 +44,9 @@ function removeTags(line)
   return line.replace(/<[^>]*>/g, '');
 }
 
-function createCommonNamesArray(xmlText) {;
+function createCommonNamesArray(xmlText) {
     var commonNames = [];
     var lines = xmlText.split("\n");
-    // 288
     for (var i = 2; i < lines.length - 2; i++) { 
         var line = lines[i];
         if (line.includes("<COMMON>")) { 
@@ -38,10 +56,10 @@ function createCommonNamesArray(xmlText) {;
     }
     return commonNames;
 }
+
 function createBotanicalNamesArray(xmlText) {;
     var botanicalNames = [];
     var lines = xmlText.split("\n");
-    // 288
     for (var i = 2; i < lines.length - 2; i++) { 
         var line = lines[i];
         if (line.includes("<BOTANICAL>")) { 
@@ -49,15 +67,43 @@ function createBotanicalNamesArray(xmlText) {;
             botanicalNames.push(botanicalName);
         }
     }
-    return commonNames;
+    return botanicalNames;
 }
 
-function output(text) {
-    if (typeof document === 'object') {
-        document.write(text);
-    } else if (typeof console === 'object') {
-        console.log(text);
-    } else {
-        print(text);
+function createZoneArray(xmlText) {;
+    var zones = [];
+    var lines = xmlText.split("\n");
+    for (var i = 2; i < lines.length - 2; i++) { 
+        var line = lines[i];
+        if (line.includes("<ZONE>")) { 
+            var zone = removeTags(line);
+            zones.push(zone);
+        }
     }
+    return zones;
+}
+function createlightArray(xmlText) {;
+    var lightArray = [];
+    var lines = xmlText.split("\n");
+    for (var i = 2; i < lines.length - 2; i++) { 
+        var line = lines[i];
+        if (line.includes("<LIGHT>")) { 
+            var light = removeTags(line);
+            lightArray.push(light);
+        }
+    }
+    return lightArray;
+}
+
+function createPriceArray(xmlText) {;
+    var prices = [];
+    var lines = xmlText.split("\n");
+    for (var i = 2; i < lines.length - 2; i++) { 
+        var line = lines[i];
+        if (line.includes("<PRICE>")) { 
+            var price = removeTags(line);
+            prices.push(price);
+        }
+    }
+    return prices;
 }
